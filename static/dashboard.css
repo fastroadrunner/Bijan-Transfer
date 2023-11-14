@@ -1,0 +1,269 @@
+    /* Align the header to the right */
+    /* Apply a universal box-sizing rule */
+
+    *, *::before, *::after {
+    box-sizing: border-box;
+    }
+
+    .header-right {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: right;
+    }
+    .header-right h3 {
+        color: #555; /* This is a dark gray */
+    }
+
+    /* Style the logout button */
+    .logout-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .logout-button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Container for logo images */
+    .image-container {
+        margin: 0px 0;
+    }
+
+    /* Style for the top-left logo image */
+    .top-left-logo {
+        display: block;
+        width: 200px;
+        height: auto;
+    }
+
+    /* Style for the second image (below the logo) */
+    .below-logo {
+        display: block;
+        width: 200px;
+        height: auto;
+        margin-top: 0px;
+        margin-left: 2px;
+    }
+
+    /* New container for the dashboard layout */
+    .dashboard-container {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 0px;
+        padding-left: 2px;
+    }
+    .menu-icon {
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+    margin-right: 10px; /* Space between icon and text */
+    }
+
+    /* Style for the menu rectangle */
+    .menu-rectangle {
+        width: 198px;
+        height: auto;
+        background-color: #00B050;
+        margin-right: 20px;
+        padding-bottom: 0px;
+        flex-shrink: 0;
+    }
+
+    /* Style for each menu section */
+    .menu-section {
+        background-color: #006400;
+        margin-bottom: 10px;
+    }
+
+    .menu-item:hover {
+    background-color: #004400; /* Example hover effect */
+    cursor: pointer; /* Changes the cursor to indicate the item is clickable */
+}
+
+    /* Style for menu headers */
+    .menu-header {
+        background-color: #008000;
+        padding: 10px;
+        margin: 0;
+    }
+
+    /* Style for menu items */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid #004d00;
+        transition: background-color 0.2s;
+    }
+    .menu-item:active {
+        background-color: #002d00; /* Change to your preferred color */
+    }
+
+
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Style for the info area */
+    .info-area {
+        background-color: #004d00;
+        padding: 10px;
+        color: white;
+    }
+
+    /* Style for menu headers within the info area */
+    .info-area .menu-header {
+        color: black;
+    }
+
+   .center-content {
+        padding: 20px; /* Adds padding around the content */
+        text-align: center; /* Centers the text horizontally */
+        margin-left: auto; /* Auto margin on the left */
+        margin-right: auto; /* Auto margin on the right */
+        margin-top : -175px;
+        width: 100%; /* Sets the width of the .center-content div */
+    }
+
+    .center-heading,
+    .center-subheading {
+        display: block; /* Makes sure each one is on a new line */
+    }
+
+
+
+    .transfers-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        margin-top: 30px;
+    }
+
+
+    .zelle-section,
+    .paypal-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+    }
+
+    .zelle-section span,
+        .paypal-section span {
+        display: block; /* Ensure the span is on a new line */
+        margin-bottom: 2px; /* Reduced space between the title and the fee */
+        font-weight: bold; /* Optional: if you want the title to be bold */
+    }
+
+    .zelle-section p,
+    .paypal-section p {
+        display: block; /* Ensure the paragraph is on a new line */
+        margin-top: 0; /* Remove any space above the paragraph */
+    }
+
+    .transfer-icon {
+        width: 50px; /* Adjust size as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Space below the icon */
+
+    }
+
+
+    .center-heading {
+        font-size: 24px; /* Large font size for the main heading */
+        color: #333; /* Dark color for the text */
+        margin-bottom: 10px; /* Space below the heading */
+    }
+
+    .center-subheading {
+        font-size: 18px; /* Smaller font size for the subheading */
+        color: #555; /* Slightly lighter color for the text */
+        margin-bottom: 20px; /* More space below the subheading */
+    }
+
+
+    .scrollable-list {
+        width: 100%;
+        height: 300px; /* Fixed height for the scrollable area */
+        overflow-y: auto; /* Enable vertical scrolling */
+        margin-bottom: 20px; /* Space below the scrollable list for text */
+        border: 1px solid #ccc; /* Optional: adds a border around the scrollable list */
+        padding: 10px; /* Padding inside the scrollable list */
+    }
+
+    .list-footer {
+    /* Styles for the footer area where text and button will be */
+        padding: 10px;
+        text-align: center; /* Center align the text and button */
+    }
+
+    .list-footer p {
+    /* Styles for the lines of text */
+        margin: 5px 0; /* Spacing between lines of text */
+    }
+
+    .select-button {
+    /* Styles for the select button */
+        padding: 10px 20px;
+        background-color: #007bff; /* Example: use your brand color here */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px; /* Space above the button */
+        transition: background-color 0.3s;
+        display: inline-block; /* Allows you to set margins */
+    }
+
+    .select-button:hover {
+        background-color: #0056b3; /* Darker shade on hover */
+    }
+    .select-button:active {
+        background-color: #002080; /* Darker color on click */
+    }
+    .exchange-rate {
+        font-size: 14px; /* Or any size that fits your design */
+    }
+
+    .timestamp {
+        font-size: 10px; /* Ensuring consistency in font size */
+    }
+
+
+    .transaction-card {
+        border: 1px solid #ccc; /* Example border: solid, light grey, 1px */
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 4px; /* Rounded corners */
+        background-color: #f9f9f9;
+        display: flex; /* Use flexbox layout */
+        justify-content: space-between; /* Space between items */
+        align-items: center; /* Align items vertically */
+    }
+
+    .select-button-transaction {
+        padding: 5px 15px; /* Smaller padding for the button */
+    /* Rest of the button styling */
+}
+
+    .transaction-card p {
+        margin: 0; /* Removes default paragraph margins */
+        flex-grow: 1; /* Allows the paragraph to grow and fill space */
+}
+
+
+
+    /* General body styles */
+    body {
+        background-color: #f5f5f5;
+        position: relative;
+        min-height: 100vh;
+    }
