@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- Image container for the logos -->
+    <div class="image-container">
+        <img src="{% static 'logo.png' %}" alt="Logo" class="top-left-logo">
+        <img src="{% static 'bijiantransfer.png' %}" alt="Bijian" class="below-logo">
+    </div>
+
+
+    <!-- Header containing the welcome message and logout button -->
+    <div class="header-right">
+        <h3>Welcome {{ username }}!</h3>
+        {% if location %}
+        <p>{{ location }}</p>
+        {% endif %}
+        <a href="{{ logout_url }}" class="logout-button">Logout</a>
+    </div>
+
+
+    <!-- Main dashboard container -->
+    <div class="dashboard-container">
+        <!-- Left side menu -->
+        <div class="menu-rectangle">
+            <!-- Transactions section -->
+            <div class="menu-section">
+                <h2 class="menu-header">Transactions</h2>
+                <a href="#" class="menu-item">
+                    <img src="{% static 'transfer.png' %}" alt="Transfer" class="menu-icon">Transfer
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="{% static 'history.png' %}" alt="History" class="menu-icon">History
+                </a>
+            </div>
+
+            <!-- My Account section -->
+            <div class="menu-section">
+                <h2 class="menu-header">My Account</h2>
+                <a href="#" class="menu-item">
+                    <img src="{% static 'profile.png' %}" alt="Profile" class="menu-icon">Profile
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="{% static 'id.png' %}" alt="Verification" class="menu-icon">ID Verification
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="{% static 'credit.png' %}" alt="Credit" class="menu-icon">Transfer Credit
+                </a>
+            </div>
+
+            <div class="info-area">
+                <h3 class="menu-header">Exchange Rate:</h3>
+                <p class="exchange-rate">$1 = {{ conversion|floatformat:2 }} ریال</p>
+                <p class="exchange-rate">Last Updated</p>
+                <!-- Display the formatted timestamp -->
+               <p class="timestamp">{{ timestamp }}</p>
+            </div>
+
+            <!-- </div> -->
+
+
+        </div>
+
+
+        <!-- Center content area -->
+        <div class="center-content">
+            <h1 class="center-heading">Currently Available Transfers</h1>
+            <p class="center-subheading">Pick an available transfer for the fastest results.</p>
+
+            <div class="transfers-container">
+            <!-- Zelle Section -->
+                <div class="zelle-section">
+                    <img src="{% static 'zelle.png' %}" alt="Zelle" class="transfer-icon">
+                    <span>Send USD via Zelle</span>
+                    <p>(Transfer fee: 2%)</p>
+                    <div class="scrollable-list">
+                        {% for transaction in zelle_transactions %}
+                             <div class="transaction-card">
+                            <!-- Display transaction details here -->
+                                <p>Trans ID: {{ transaction.id }} Amount (USD): {{ transaction.converted_amount }}   <button class="select-button-transaction" >Select</button></p>
+                             </div>
+
+                        {% endfor %}
+                    </div>
+                    <div class="list-footer">
+                    <!-- Placeholder for 3 lines of text -->
+                        <p>Want to exchange an amount not currently listed?</p>
+                        <p>(Initiate transfer fee: 3%)</p>
+                        <button class="select-button">Initiate Custom Transaction</button>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <!-- PayPal Section -->
+                <div class="paypal-section">
+                    <img src="{% static 'paypal.png' %}" alt="PayPal" class="transfer-icon">
+                    <span>Send USD via PayPal</span>
+                    <p>(Transfer fee: 2%)</p>
+                    <div class="scrollable-list">
+                        {% for transaction in paypal_transactions %}
+                            <div class="transaction-card">
+                            <!-- Display transaction details here -->
+                                <p>Trans ID: {{ transaction.id }} Amount (USD): {{ transaction.converted_amount }}   <button class="select-button-transaction" >Select</button></p>
+                             </div>
+                        {% endfor %}
+                    </div>
+                    <div class="list-footer">
+                    <!-- Placeholder for 3 lines of text -->
+                        <p>Want to exchange an amount not currently listed?</p>
+                        <p>(Initiate transfer fee: 3%)</p>
+                        <button class="select-button">Initiate Custom Transaction</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
